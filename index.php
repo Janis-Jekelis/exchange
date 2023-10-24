@@ -1,9 +1,8 @@
 <?php
 declare(strict_types=1);
+
 use App\Application;
 
-$result=(new Application())->calculate();
-echo number_format($result,2);
-
-
-
+require_once "vendor/autoload.php";
+$result = new Application();
+echo number_format($result->calculate(), 2) . " " . $result->getTargetCurrency() . PHP_EOL;
